@@ -1,2 +1,3 @@
 # dotfiles
 setting files
+zsh
