@@ -1,0 +1,8 @@
+.*.swp
+*~
+*#*
+ac-comphist.dat
+elpa/
+elisp/
+projectile-bookmarks.eld
+.cask/
