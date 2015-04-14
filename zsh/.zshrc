@@ -9,7 +9,7 @@ export XMODIFIRES=@im=uim
 # history
 #########################
 
-HISTFILE=~/.zsh_history
+HISTFILE=~/dotfiles/zsh/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 # 重複したコマンドラインをヒストリから削除
