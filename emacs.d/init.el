@@ -170,6 +170,6 @@
 ;; (define-key yas-minor-mode-map (kbd "C-x v") 'yas-visit-snippet-file)
 
 ;; cask
-;; (require 'cask "~/.cask/cask.el")
-;; (cask-initialize)
-;; (require 'pallet)
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+(require 'pallet)

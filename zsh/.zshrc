@@ -4,6 +4,8 @@
 
 export LANG=ja_JP.UTF-8
 export XMODIFIRES=@im=uim
+export PATH="$PATH":/home/13t264/.cask/bin
+
 
 #########################
 # history
