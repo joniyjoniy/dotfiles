@@ -52,8 +52,8 @@
 ;;-------------------------------------------------------------------------------------------------------------
 ;; 対応する記号を自動補完
 ;;-------------------------------------------------------------------------------------------------------------
-;;(require 'smartparens-config)
-;;(smartparens-global-mode t)
+(require 'smartparens-config)
+(smartparens-global-mode t)
 
 ;;-------------------------------------------------------------------------------------------------------------
 ;; キーバインド
@@ -95,18 +95,18 @@
 ;;-------------------------------------------------------------------------------------------------------------
 ;; auto-complete
 ;;-------------------------------------------------------------------------------------------------------------
-;;(require 'auto-complete)
-;;(global-auto-complete-mode t)
-;;(require 'auto-complete-config)
-;;(require 'fuzzy)
-;;(ac-config-default)
+(require 'auto-complete)
+(global-auto-complete-mode t)
+(require 'auto-complete-config)
+(require 'fuzzy)
+(ac-config-default)
 ;; C-n/C-pで候補選択
-;;(setq ac-use-menu-map t)
+(setq ac-use-menu-map t)
 
-;;(define-key ac-menu-map "\C-n" 'ac-next)
-;;(define-key ac-menu-map "\C-p" 'ac-previous)
-;;(define-key ac-mode-map (kbd "C-;") 'ac-fuzzy-complete)
-;;(add-to-list 'ac-modes 'slim-mode 'rhtml-mode)
+(define-key ac-menu-map "\C-n" 'ac-next)
+(define-key ac-menu-map "\C-p" 'ac-previous)
+(define-key ac-mode-map (kbd "C-;") 'ac-fuzzy-complete)
+(add-to-list 'ac-modes 'slim-mode 'rhtml-mode)
 
 
 ;;-------------------------------------------------------------------------------------------------------------
