@@ -116,7 +116,7 @@
 ;; ruby
 ;;-------------------------------------------------------------------------------------------------------------
 (autoload 'ruby-mode "ruby-mode"
-    "Mode for editing ruby source files" t)
+  "Mode for editing ruby source files" t)
 ;; .rb Capfile GemfileをRubyファイルと認識
 (add-to-list 'auto-mode-alist '("\\.rb$latex " . ruby-mode))
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
@@ -127,10 +127,10 @@
 (setq ruby-electric-expand-delimiters-list nil)
 ;; end対策
 (defun ruby-insert-end ()
-    (interactive)
-      (insert "end")
-        (ruby-indent-line t)
-          (end-of-line))
+  (interactive)
+  (insert "end")
+  (ruby-indent-line t)
+  (end-of-line))
 ;; ruby-block
 (require 'ruby-block)
 (ruby-block-mode t)
@@ -172,13 +172,17 @@
 ;; 既存スニペットを閲覧・編集する
 ;; (define-key yas-minor-mode-map (kbd "C-x v") 'yas-visit-snippet-file)
 
+;; -----------------------------------------------------------------------------------------------------------
 ;; cask
+;; -----------------------------------------------------------------------------------------------------------
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 (require 'pallet)
 
 
-;; web mode
+;; -----------------------------------------------------------------------------------------------------------
+;; web-mode
+;; -----------------------------------------------------------------------------------------------------------
 (require 'web-mode)
 ;; web-modeの設定
 (defun web-mode-hook ()
@@ -190,6 +194,15 @@
         )
   )
 
+;; -----------------------------------------------------------------------------------------------------------
 ;; cua-mode
+;; -----------------------------------------------------------------------------------------------------------
 (cua-mode t)
 (setq cua-mode-cua-keys nil)
+
+;; -----------------------------------------------------------------------------------------------------------
+;; lua-mode
+;; -----------------------------------------------------------------------------------------------------------
+(require 'lua-mode)
+;;lua-modeの設定
+(setq lua-indent-level 2)
