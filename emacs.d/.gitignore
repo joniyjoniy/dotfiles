@@ -1,6 +1,7 @@
 .*.swp
 *~
 *#*
+*.elc
 ac-comphist.dat
 elpa/
 elisp/
