@@ -11,3 +11,7 @@
 (global-set-key "\C-h" 'backward-delete-char)
 ;; C-mで改行とインデント
 (global-set-key "\C-m" 'newline-and-indent)
+;; C-x l でgoto-line
+(global-set-key "\C-xl" 'goto-line)
+;;
+(global-set-key "\C-x\C-r" 'load-file)

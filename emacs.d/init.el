@@ -22,12 +22,3 @@
 (require 'init-loader)
 (setq init-loader-show-log-after-init 'error-only)
 (init-loader-load "~/dotfiles/emacs.d/inits")
-
-;;-------------------------------------------------------------------------------------
-;; ロードパス
-;;-------------------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/elisp")
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install/"))
-(require 'auto-install)
-(auto-install-update-emacswiki-package-name t)
-(auto-install-compatibility-setup)
