@@ -6,16 +6,19 @@
 ;;-------------------------------------------------------------------------------------
 ;;helm
 ;;-------------------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/elisp/helm")
-(global-set-key (kbd "C-x C-b") 'helm-mini)
 (use-package helm-config)
+:bind (("C-x C-b" . helm-mini)
+;;        ("M-y" . helm-show-kill-ring)
+;;        ("TAB" . helm-execute-persistent-action)
+        )
+;;(global-set-key (kbd "C-x C-b") 'helm-mini)
 (helm-mode t)
 ;; M-yでキルリングの履歴一覧を表示
-(define-key global-map (kbd "M-y") 'helm-show-kill-ring)
+;;(define-key global-map (kbd "M-y") 'helm-show-kill-ring)
 ;; helm modeでもC-hでバックスペース
-(define-key helm-map (kbd "\C-h") 'delete-backward-char)
+;;(define-key helm-map (kbd "\C-h") 'delete-backward-char)
 ;; tabでディレクトリ移動
-(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+;;(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
 
 ;;-------------------------------------------------------------------------------------
 ;; auto-complete
