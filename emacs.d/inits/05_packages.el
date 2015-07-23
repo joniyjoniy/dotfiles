@@ -6,19 +6,17 @@
 ;;-------------------------------------------------------------------------------------
 ;;helm
 ;;-------------------------------------------------------------------------------------
-(use-package helm-config)
-:bind (("C-x C-b" . helm-mini)
-;;        ("M-y" . helm-show-kill-ring)
-;;        ("TAB" . helm-execute-persistent-action)
-        )
-;;(global-set-key (kbd "C-x C-b") 'helm-mini)
 (helm-mode t)
-;; M-yでキルリングの履歴一覧を表示
-;;(define-key global-map (kbd "M-y") 'helm-show-kill-ring)
-;; helm modeでもC-hでバックスペース
-;;(define-key helm-map (kbd "\C-h") 'delete-backward-char)
-;; tabでディレクトリ移動
-;;(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+(use-package helm-config
+  :bind (
+         ;; C-x C-b でhelmのミニバッファを表示
+         ("C-x C-b" . helm-mini)
+         ;; M-yでキルリングの履歴一覧を表示
+         ("M-y" . helm-show-kill-ring)))
+;; helm-modeでもC-hでバックスペース
+(bind-key "C-h" 'delete-backward-char helm-map)
+;; helm-modeでもtabでディレクトリ移動
+(bind-key "TAB" 'helm-execute-persistent-action helm-read-file-map)
 
 ;;-------------------------------------------------------------------------------------
 ;; auto-complete
@@ -30,10 +28,11 @@
 (ac-config-default)
 ;; C-n/C-pで候補選択
 (setq ac-use-menu-map t)
+(bind-keys :map ac-manu-map
+           ("C-n" 'ac-next)
+           ("C-p" 'ac-previous))
 
-(define-key ac-menu-map "\C-n" 'ac-next)
-(define-key ac-menu-map "\C-p" 'ac-previous)
-(define-key ac-mode-map (kbd "C-;") 'ac-fuzzy-complete)
+(bind-key "C-;" 'ac-fuzzy-complete ac-mode-map)
 (add-to-list 'ac-modes 'slim-mode 'rhtml-mode)
 
 ;;-------------------------------------------------------------------------------------
@@ -45,13 +44,6 @@
          ("Capfile$" . ruby-mode)
          ("Gemfile$" . ruby-mode))
   :interpreter "ruby")
-
-;; (autoload 'ruby-mode "ruby-mode"
-;;   "Mode for editing ruby source files" t)
-;; ;; .rb Capfile GemfileをRubyファイルと認識
-;; (add-to-list 'auto-mode-alist '("\\.rb$latex " . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 
 ;; ruby-electric
 (use-package ruby-electric)
