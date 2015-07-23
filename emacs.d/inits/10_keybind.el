@@ -1,17 +1,16 @@
 ;;-------------------------------------------------------------------------------------
 ;; キーバインド
 ;;-------------------------------------------------------------------------------------
-;; C-c C-cでコメントアウト
-(define-key global-map "\C-c\C-c" 'comment-region)
-;;  C-c C-uでアンコメント
-(define-key global-map "\C-c\C-u" 'uncomment-region)
-;; C-uでundo
-(define-key global-map "\C-u" 'undo)
-;; C-hでバックスペース
-(global-set-key "\C-h" 'backward-delete-char)
-;; C-mで改行とインデント
-(global-set-key "\C-m" 'newline-and-indent)
-;; C-x l でgoto-line
-(global-set-key "\C-xl" 'goto-line)
-;;
-(global-set-key "\C-x\C-r" 'load-file)
+(bind-keys :map global-map
+           ;; C-c C-cでコメントアウト
+           ("C-c C-c" 'comment-dwim)
+           ;;  C-c C-uでアンコメント
+           ("C-c C-u" 'uncomment-region)
+           ;; C-uでundo
+           ("C-u" 'undo)
+           ;; C-hでバックスペース
+           ("C-h" 'backward-delete-char)
+           ;; C-mで改行とインデント
+           ("C-m" 'newline-and-indent)
+           ;; C-x l でgoto-line
+           ("C-xl" 'goto-line))
