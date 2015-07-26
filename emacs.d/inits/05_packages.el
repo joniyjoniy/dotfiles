@@ -8,11 +8,13 @@
 ;;-------------------------------------------------------------------------------------
 (helm-mode t)
 (use-package helm-config
-  :bind (
-         ;; C-x C-b でhelmのミニバッファを表示
-         ("C-x C-b" . helm-mini)
-         ;; M-yでキルリングの履歴一覧を表示
-         ("M-y" . helm-show-kill-ring)))
+;;  :bind (
+;;         ;; C-x C-b でhelmのミニバッファを表示
+;;         ("C-x C-b" . helm-mini)
+;;         ;; M-yでキルリングの履歴一覧を表示
+;;         ("M-y" . helm-show-kill-ring))
+)
+
 ;; helm-modeでもC-hでバックスペース
 (bind-key "C-h" 'delete-backward-char helm-map)
 ;; helm-modeでもtabでディレクトリ移動
