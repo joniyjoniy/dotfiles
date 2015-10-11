@@ -12,4 +12,11 @@
 ;; C-hでバックスペース
 (define-key global-map "\C-h" 'backward-delete-char)
 ;; C-mで改行とインデント
-(define-key global-map "\C-m" 'new-line-and-indent)
+(global-set-key "\C-m" 'newline-and-indent)
+
+;; (bind-keys "C-c C-c" 'comment-dwim global-map)
+;; (bind-keys "C-c C-u" 'uncomment-region global-map)
+;; (bind-keys "C-u" 'undo global-map)
+;; (bind-keys "C-h" 'backward-delete-char global-map)
+;; (bind-keys "C-m" 'newline-and-indent global-map)
+;; (bind-keys "C-xl" 'goto-line global-map)

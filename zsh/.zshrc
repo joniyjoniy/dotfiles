@@ -5,7 +5,8 @@
 export LANG=ja_JP.UTF-8
 export XMODIFIRES=@im=uim
 export PATH="$PATH":"$HOME"/.cask/bin
-
+export PATH="$PATH":"$HOME"/.rbenv/bin
+eval "$(rbenv init -)"
 
 #########################
 # history
