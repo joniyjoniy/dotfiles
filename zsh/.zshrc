@@ -48,6 +48,19 @@ alias tmux='tmux -2'
 alias tmuxa='tmux a -t'
 alias tmuxk='tmux kill-session'
 alias tmuxl='tmux list-session'
+alias gls="git status"
+alias gsl="git status"
+alias gch="git checkout"
+alias gbr="git branch"
+alias gmf="git merge --no-ff"
+alias gdm="git branch --merged | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%C(yellow)%d%Creset' --abbrev-commit --date=relative"
+alias gad="git add"
+alias gco="git commit"
+alias gpu="git push"
+alias gpl="git pull"
+alias gdi="git diff"
+alias be="bundle exec"
 
 ###############################
 #プロンプト設定
