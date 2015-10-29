@@ -3,8 +3,6 @@
 ;;-------------------------------------------------------------------------------------
 ;; 入力キー表示速度を早くする
 (setq echo-keystrokes 0.1)
-;; 行末の空白を保存時に削除
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; タブ幅
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil) ; 空白でインデント
