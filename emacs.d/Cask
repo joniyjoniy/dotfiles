@@ -26,3 +26,17 @@
 (depends-on "use-package")
 (depends-on "web-mode")
 (depends-on "yasnippet")
+
+(depends-on "use-package")
+(depends-on "init-loader")
+(depends-on "helm")
+(depends-on "ruby-electric")
+(depends-on "helm")
+(depends-on "auto-complete")
+(depends-on "ruby-block")
+(depends-on "fuzzy")
+(depends-on "rhtml-mode")
+(depends-on "coffee-mode")
+(depends-on "projectile")
+(depends-on "projectile-rails")
+

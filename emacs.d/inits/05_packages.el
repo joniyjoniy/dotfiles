@@ -1,54 +1,52 @@
-;;-------------------------------------------------------------------------------------
+;;--------------------------
 ;; use-package
-;;-------------------------------------------------------------------------------------
+;;--------------------------
 (require 'use-package)
 
-;;-------------------------------------------------------------------------------------
+;;--------------------------
 ;;helm
-;;-------------------------------------------------------------------------------------
-(helm-mode t)
-(use-package helm-config
-;;  :bind (
-;;         ;; C-x C-b でhelmのミニバッファを表示
-;;         ("C-x C-b" . helm-mini)
-;;         ;; M-yでキルリングの履歴一覧を表示
-;;         ("M-y" . helm-show-kill-ring))
-)
+;;--------------------------
+(when (require 'helm-config nil t)
+  (helm-mode 1)
+  
+  (define-key global-map (kbd "M-x") 'helm-M-x)
+  (define-key global-map (kbd "C-x C-f") 'helm-find-files)
+  (define-key global-map (kbd "C-x C-r") 'helm-recentf)
+  (define-key global-map (kbd "M-y")     'helm-show-kill-ring)
+  (define-key global-map (kbd "C-c i")   'helm-imenu)
+  (define-key global-map (kbd "C-x b")   'helm-buffers-list)
 
-;; helm-modeでもC-hでバックスペース
-(bind-key "C-h" 'delete-backward-char helm-map)
-;; helm-modeでもtabでディレクトリ移動
-(bind-key "TAB" 'helm-execute-persistent-action helm-read-file-map)
+  (define-key helm-map (kbd "C-h") 'delete-backward-char)
+  (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
+  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+  (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+  )
 
-;;-------------------------------------------------------------------------------------
+;;--------------------------
 ;; auto-complete
-;;-------------------------------------------------------------------------------------
-(use-package auto-complete)
-(global-auto-complete-mode t)
-(use-package auto-complete-config)
-(use-package fuzzy)
-(ac-config-default)
-;; C-n/C-pで候補選択
-(setq ac-use-menu-map t)
-(bind-keys :map ac-manu-map
-           ("C-n" 'ac-next)
-           ("C-p" 'ac-previous))
-
-(bind-key "C-;" 'ac-fuzzy-complete ac-mode-map)
-(add-to-list 'ac-modes 'slim-mode 'rhtml-mode)
-
-;;-------------------------------------------------------------------------------------
+;;--------------------------
+(when (require 'auto-complete)
+  (require 'auto-complete-config)
+  (global-auto-complete-mode t)
+  (require 'fuzzy)
+  (ac-config-default)
+  (add-to-list 'ac-modes 'slim-mode)
+  (add-to-list 'ac-modes 'fundamental-mode)
+  (add-to-list 'ac-modes 'yatex-mode)  
+  ;; C-n/C-pで候補選択
+  (setq ac-use-menu-map t)
+  (setq ac-use-fuzzy t))
+;;--------------------------
 ;; ruby
-;;-------------------------------------------------------------------------------------
-(use-package 'ruby-mode
-  :commands ruby-mode
-  :mode (("\\.rb$latex" . ruby-mode)
-         ("Capfile$" . ruby-mode)
-         ("Gemfile$" . ruby-mode))
-  :interpreter "ruby")
-
+;;--------------------------
+(require 'ruby-mode)
+;; ruby-mode でencoding: utf-8 自動挿入をOFFにする
+(defun ruby-mode-set-encoding () ())
+;; ハイライトするファイルの種類を追加
+(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 ;; ruby-electric
-(use-package ruby-electric)
+(require 'ruby-electric)
 (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 (setq ruby-electric-expand-delimiters-list nil)
 ;; end対策
@@ -58,29 +56,29 @@
   (ruby-indent-line t)
   (end-of-line))
 ;; ruby-block
-(use-package ruby-block)
+(require 'ruby-block)
 (ruby-block-mode t)
 (setq ruby-block-heilight-toggle t)
 
-;;-------------------------------------------------------------------------------------
+;;--------------------------
 ;; rails
-;;-------------------------------------------------------------------------------------
-(use-package rhtml-mode)
-(use-package coffee-mode)
+;;--------------------------
+(require 'rhtml-mode)
+(require 'coffee-mode)
 ;; projective-rails
-(use-package projectile)
+(require 'projectile)
 (projectile-global-mode)
-(use-package projectile-rails)
+(require 'projectile-rails)
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 (setq echo-keystrokes 0.1)
 (setq projectile-completion-system 'grizzl)
-(use-package recentf-ext)
+(require 'recentf-ext)
 (setq recentf-max-saved-items 5000)
 
-;;-------------------------------------------------------------------------------------
+;;--------------------------
 ;; web-mode
-;;-------------------------------------------------------------------------------------
-(use-package web-mode)
+;;--------------------------
+(require 'web-mode)
 ;; web-modeの設定
 (defun web-mode-hook ()
   (setq web-mode-markup-indent-offset 2)
@@ -90,30 +88,11 @@
         '(("php"    . "\\.ctp\\'"))
         )
   )
-
-;;-------------------------------------------------------------------------------------
+;;--------------------------
 ;; lua-mode
-;;-------------------------------------------------------------------------------------
-(use-package lua-mode)
+;;--------------------------
+
+(require 'lua-mode)
 ;;lua-modeの設定
 (setq lua-indent-level 2)
 
-;;-------------------------------------------------------------------------------------
-;; twitter
-;;-------------------------------------------------------------------------------------
-;; (use-package twittering-mode)
-;; (setq twittering-)
-
-;;-------------------------------------------------------------------------------------
-;; snippet
-;;-------------------------------------------------------------------------------------
-;; (add-to-list 'load-path "~/.emacs.d/elisp/yasnippet")
-;; (use-package yasnippet)
-;; (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-;; (yas-global-mode 1)
-;; 既存スニペットを挿入する
-;; (define-key yas-minor-mode-map (kbd "C-x i") 'yas-insert-snippet)
-;; 新規スニペットを作成するバッファを用意する
-;; (define-key yas-minor-mode-map (kbd "C-x n") 'yas-new-snippet)
-;; 既存スニペットを閲覧・編集する
-;; (define-key yas-minor-mode-map (kbd "C-x v") 'yas-visit-snippet-file)

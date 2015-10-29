@@ -26,6 +26,10 @@
 ;;バックアップファイルを作らない
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+;; 時刻表示
+(display-time-mode 1)
+;; カラーテーマ
+(load-theme 'manoj-dark t)
 
 ;;-------------------------------------------------------------------------------------
 ;; 補完
