@@ -1,4 +1,10 @@
 ;;--------------------------
+;; exec-path-from-shell
+;;--------------------------
+(let ((envs '("PATH" "GOPATH")))
+    (exec-path-from-shell-copy-envs envs))
+
+;;--------------------------
 ;;helm
 ;;--------------------------
 (when (require 'helm-config nil t)
@@ -20,7 +26,7 @@
 ;;--------------------------
 ;; auto-complete
 ;;--------------------------
-(when (require 'auto-complete)
+(when (require 'auto-complete nil t)
   (require 'auto-complete-config)
   (global-auto-complete-mode t)
   (require 'fuzzy)
@@ -91,3 +97,10 @@
 ;;lua-modeの設定
 (setq lua-indent-level 2)
 
+;;--------------------------
+;; go-mode
+;;--------------------------
+(require 'go-mode)
+(eval-after-load "go-mode"
+  '(progn
+     (require 'go-autocomplete)))
