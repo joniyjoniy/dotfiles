@@ -5,6 +5,13 @@
     (exec-path-from-shell-copy-envs envs))
 
 ;;--------------------------
+;; smartparens
+;;--------------------------
+(when (require 'smartparens-config nil t)
+  (smartparens-mode t))
+
+
+;;--------------------------
 ;;helm
 ;;--------------------------
 (when (require 'helm-config nil t)
@@ -20,8 +27,7 @@
   (define-key helm-map (kbd "C-h") 'delete-backward-char)
   (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
   (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
-  (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
-  )
+  (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action))
 
 ;;--------------------------
 ;; auto-complete
@@ -40,26 +46,26 @@
 ;;--------------------------
 ;; ruby
 ;;--------------------------
-(require 'ruby-mode)
-;; ruby-mode でencoding: utf-8 自動挿入をOFFにする
-(defun ruby-mode-set-encoding () ())
-;; ハイライトするファイルの種類を追加
-(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-;; ruby-electric
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
-(setq ruby-electric-expand-delimiters-list nil)
-;; end対策
-(defun ruby-insert-end ()
-  (interactive)
-  (insert "end")
-  (ruby-indent-line t)
-  (end-of-line))
-;; ruby-block
-(require 'ruby-block)
-(ruby-block-mode t)
-(setq ruby-block-heilight-toggle t)
+(when (require 'ruby-mode nil t)
+  ;; ruby-mode でencoding: utf-8 自動挿入をOFFにする
+  (defun ruby-mode-set-encoding () ())
+  ;; ハイライトするファイルの種類を追加
+  (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+  (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+  ;; ruby-electric
+  (require 'ruby-electric)
+  (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+  (setq ruby-electric-expand-delimiters-list nil)
+  ;; end対策
+  (defun ruby-insert-end ()
+    (interactive)
+    (insert "end")
+    (ruby-indent-line t)
+    (end-of-line))
+  ;; ruby-block
+  (require 'ruby-block)
+  (ruby-block-mode t)
+  (setq ruby-block-heilight-toggle t))
 
 ;;--------------------------
 ;; rails
