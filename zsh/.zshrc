@@ -7,7 +7,6 @@ export TERM="xterm-256color"
 export EDITOR="emacs -nw"
 export GREP_OPTION="--color=auto"
 
-
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000

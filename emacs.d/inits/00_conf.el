@@ -4,7 +4,7 @@
 ;; 入力キー表示速度を早くする
 (setq echo-keystrokes 0.1)
 ;; タブ幅
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 (setq-default indent-tabs-mode nil) ; 空白でインデント
 ;; 文字コード
 (set-language-environment "japanese")
@@ -30,6 +30,9 @@
 (display-time-mode 1)
 ;; カラーテーマ
 (load-theme 'manoj-dark t)
+;; 対応する括弧を強調
+(show-paren-mode t)
+(setq show-paren-delay 0)
 
 ;;-------------------------------------------------------------------------------------
 ;; 補完

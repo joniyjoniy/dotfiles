@@ -7,8 +7,8 @@
 ;;--------------------------
 ;; smartparens
 ;;--------------------------
-(when (require 'smartparens-config nil t)
-  (smartparens-mode t))
+(require 'smartparens-config)
+(smartparens-global-mode t)
 
 
 ;;--------------------------
@@ -72,6 +72,7 @@
 ;;--------------------------
 (require 'rhtml-mode)
 (require 'coffee-mode)
+(add-to-list 'auto-mode-alist '(".cjsx$" . coffee-mode))
 ;; projective-rails
 (require 'projectile)
 (projectile-global-mode)
@@ -110,3 +111,21 @@
 (eval-after-load "go-mode"
   '(progn
      (require 'go-autocomplete)))
+
+;;--------------------------
+;; php-mode
+;;--------------------------
+
+(require 'php-mode)
+;;php-modeの設定
+(add-hook 'php-mode-hook
+          '(lambda ()
+             (c-set-style "stroustrup")
+             (setq tab-width 2)
+             (setq c-basic-offset 2)
+             (setq indent-tabs-mode t)
+             (c-set-offset 'arglist-intro '+)
+             (c-set-offset 'arglist-close 0)
+             ;;(setq php-mode-force-pear t)
+             ))
+
