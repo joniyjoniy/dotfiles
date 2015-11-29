@@ -41,6 +41,6 @@
 (depends-on "projectile")
 (depends-on "projectile-rails")
 (depends-on "go-mode")
-(depends-on "go-auto-complete")
+(depends-on "go-autocomplete")
 (depends-on "lua-mode")
 (depends-on "php-mode")
