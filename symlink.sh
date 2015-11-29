@@ -12,3 +12,4 @@ if [ ! -e $dir ]; then
 fi
 
 ln -snf ~/dotfiles/emacs.d/init.el $dir
+ln -snf ~/dotfiles/emacs.d/Cask $dir
