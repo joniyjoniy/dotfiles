@@ -44,3 +44,4 @@
 (depends-on "go-autocomplete")
 (depends-on "lua-mode")
 (depends-on "php-mode")
+(depends-on "yaml-mode")
