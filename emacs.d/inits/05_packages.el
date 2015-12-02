@@ -10,7 +10,6 @@
 (require 'smartparens-config)
 (smartparens-global-mode t)
 
-
 ;;--------------------------
 ;;helm
 ;;--------------------------
@@ -129,3 +128,12 @@
              ;;(setq php-mode-force-pear t)
              ))
 
+;;--------------------------
+;; flycheck
+;;--------------------------
+(require 'flycheck)
+;; (require 'flycheck-pos-tip)
+;; (eval-after-load 'flycheck
+;;   '(custom-set-variables
+;;     '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+(add-hook 'after-init-hook #'global-flycheck-mode)
