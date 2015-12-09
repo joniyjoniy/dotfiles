@@ -35,8 +35,6 @@
 (setq show-paren-delay 0)
 ;; 最終行に1行追加
 (setq require-final-newline t)
-;; 保存時に行末の空白を削除
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;-------------------------------------------------------------------------------------
 ;; 補完
@@ -45,3 +43,4 @@
 (setq read-buffer-completion-ignore-case t)
 ;; ファイル名の問い合わせで大文字小文字の区別をしない
 (setq read-file-name-completion-ignore-case t)
+
