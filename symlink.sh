@@ -2,6 +2,7 @@
 
 ln -snf ~/dotfiles/zsh/.zshrc ~/
 ln -snf ~/dotfiles/.tmux.conf ~/
+ln -snf ~/dotfiles/.vim/.vimrc ~/
 
 #ln -s ~/dotfiles/emacs.d ~/.emacs.d
 dir=~/.emacs.d/
