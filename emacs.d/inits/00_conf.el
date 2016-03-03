@@ -35,6 +35,8 @@
 (setq show-paren-delay 0)
 ;; 最終行に1行追加
 (setq require-final-newline t)
+;; 行末の空白を削除
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;-------------------------------------------------------------------------------------
 ;; 補完

@@ -15,7 +15,7 @@
 ;;--------------------------
 (when (require 'helm-config nil t)
   (helm-mode 1)
-  
+
   (define-key global-map (kbd "M-x") 'helm-M-x)
   (define-key global-map (kbd "C-x C-f") 'helm-find-files)
   (define-key global-map (kbd "C-x C-r") 'helm-recentf)
@@ -38,7 +38,7 @@
   (ac-config-default)
   (add-to-list 'ac-modes 'slim-mode)
   (add-to-list 'ac-modes 'fundamental-mode)
-  (add-to-list 'ac-modes 'yatex-mode)  
+  (add-to-list 'ac-modes 'yatex-mode)
   ;; C-n/C-pで候補選択
   (setq ac-use-menu-map t)
   (setq ac-use-fuzzy t))
@@ -86,14 +86,16 @@
 ;; web-mode
 ;;--------------------------
 (require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 ;; web-modeの設定
 (defun web-mode-hook ()
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
+  (setq web-mode-comment-style 2)
   (setq web-mode-engines-alist
-        '(("php"    . "\\.ctp\\'"))
-        )
+        '(("php"    . "\\.ctp\\'")))
   )
 ;;--------------------------
 ;; lua-mode
@@ -129,11 +131,16 @@
              ))
 
 ;;--------------------------
+;; javascript
+;;--------------------------
+(setq js-indent-level 2)
+
+;;--------------------------
 ;; flycheck
 ;;--------------------------
-(require 'flycheck)
+;;(require 'flycheck)
 ;; (require 'flycheck-pos-tip)
 ;; (eval-after-load 'flycheck
 ;;   '(custom-set-variables
 ;;     '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
