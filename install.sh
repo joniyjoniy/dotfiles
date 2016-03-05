@@ -1,5 +1,6 @@
 #!/local/bash
 
+# 入っていなければ実行する
 # zsh
 sudo apt-get install zsh
 
