@@ -46,4 +46,4 @@
 (depends-on "php-mode")
 (depends-on "yaml-mode")
 (depends-on "exec-path-from-shell")
-(depends-on "flycheck")
+(depends-on "wakatime-mode")

@@ -144,3 +144,19 @@
 ;;   '(custom-set-variables
 ;;     '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 ;;(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;;--------------------------
+;; wakatime
+;;--------------------------
+(require 'wakatime-mode)
+(when (require 'wakatime-mode nil t)
+  (setq wakatime-api-key (getenv "WAKATIMEKEY"))
+  ;; すべてのバッファで訪問時に記録を開始
+  (global-wakatime-mode)
+  )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(wakatime-cli-path "/usr/local/bin/wakatime"))
