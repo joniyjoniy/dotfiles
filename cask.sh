@@ -4,3 +4,4 @@ echo 'export PATH="$PATH":~/.cask/bin' >> ~/.zshenv
 
 # test1
 # test2
+# test3
