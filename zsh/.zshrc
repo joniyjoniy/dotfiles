@@ -70,6 +70,8 @@ zstyle 'completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd ..
 # 補完候補のカーソル選択を有効に
 zstyle ':completion:*:default' menu select=1
+# 補完候補に色を付ける
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 ##########################
 # エイリアス
@@ -86,7 +88,7 @@ alias emacs='emacs -nw'
 alias zshload='source ~/.zshrc'
 alias tmux='tmux -2'
 alias tmuxa='tmux a -t'
-alias tmuxk='tmux kill-session'
+alias tmuxk='tmux kill-session -t'
 alias tmuxl='tmux list-session'
 alias gls="git status"
 alias gsl="git status"
@@ -105,8 +107,7 @@ alias be="bundle exec"
 ###############################
 #プロンプト
 ###############################
-PROMPT="
-%D{%Y-%m-%d %H:%M:%S} %n@%m:%d
+PROMPT="%D{%Y-%m-%d %H:%M:%S} %n@%m:%d
 %# "
 #RPROMPT
 RPROMPT=$'`branch-status-check`'
