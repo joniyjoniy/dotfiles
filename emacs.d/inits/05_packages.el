@@ -1,4 +1,4 @@
-;;--------------------------
+;; --------------------------
 ;; exec-path-from-shell
 ;;--------------------------
 (let ((envs '("PATH" "GOPATH")))
@@ -111,7 +111,10 @@
 (require 'go-mode)
 (eval-after-load "go-mode"
   '(progn
-     (require 'go-autocomplete)))
+     (require 'go-autocomplete)
+     (require 'auto-complete-config)
+     (ac-config-default)))
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;;--------------------------
 ;; php-mode
@@ -131,32 +134,15 @@
              ))
 
 ;;--------------------------
-;; javascript
-;;--------------------------
-(setq js-indent-level 2)
-
-;;--------------------------
 ;; flycheck
 ;;--------------------------
-;;(require 'flycheck)
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 ;; (require 'flycheck-pos-tip)
+(setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 ;; (eval-after-load 'flycheck
 ;;   '(custom-set-variables
-;;     '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
-;;(add-hook 'after-init-hook #'global-flycheck-mode)
+;;   '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
-;;--------------------------
-;; wakatime
-;;--------------------------
-(require 'wakatime-mode)
-(when (require 'wakatime-mode nil t)
-  (setq wakatime-api-key (getenv "WAKATIMEKEY"))
-  ;; すべてのバッファで訪問時に記録を開始
-  (global-wakatime-mode)
-  )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(wakatime-cli-path "/usr/local/bin/wakatime"))
+(provide '05_packages)
+;;; 05_packages.el ends here
