@@ -12,7 +12,7 @@
 ;;-------------------------------------------------------------------------------------
 ;; cask
 ;;-------------------------------------------------------------------------------------
-(require 'cask "/usr/local/opt/cask/cask.el")
+(require 'cask "~/.cask/cask.el")
 (cask-initialize)
 (require 'pallet)
 
@@ -30,6 +30,9 @@
  '(auto-save-default nil)
  '(auto-save-list-file-name nil t)
  '(auto-save-list-file-prefix nil)
+ '(custom-safe-themes
+   (quote
+    ("0b7ee9bac81558c11000b65100f29b09488ff9182c083fb303c7f13fd0ec8d2b" default)))
  '(delete-auto-save-files t)
  '(package-selected-packages
    (quote

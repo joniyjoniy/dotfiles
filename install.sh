@@ -1,4 +1,4 @@
-#!/local/bash
+#!/bin/bash
 
 # 入っていなければ実行する
 # zsh

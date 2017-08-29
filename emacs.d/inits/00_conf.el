@@ -29,7 +29,7 @@
 ;; 時刻表示
 (display-time-mode 1)
 ;; カラーテーマ
-(load-theme 'manoj-dark t)
+(load-theme 'madhat2r t)
 ;; 対応する括弧を強調
 (show-paren-mode t)
 (setq show-paren-delay 0)
@@ -45,4 +45,3 @@
 (setq read-buffer-completion-ignore-case t)
 ;; ファイル名の問い合わせで大文字小文字の区別をしない
 (setq read-file-name-completion-ignore-case t)
-
