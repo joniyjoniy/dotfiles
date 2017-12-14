@@ -106,6 +106,25 @@
 (setq lua-indent-level 2)
 
 ;;--------------------------
+;; json-mode
+;;--------------------------
+
+(require 'json-mode)
+;;json-modeの設定
+(add-hook 'json-mode-hook
+          (lambda ()
+            (setq js-indent-level 2)))
+
+;;--------------------------
+;; terraform-mode
+;;--------------------------
+
+(require 'terraform-mode)
+;;terraform-modeの設定
+(custom-set-variables
+  '(terraform-indent-level 4))
+
+;;--------------------------
 ;; go-mode
 ;;--------------------------
 (require 'go-mode)
