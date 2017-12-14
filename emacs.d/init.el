@@ -33,7 +33,7 @@
  '(delete-auto-save-files t)
  '(package-selected-packages
    (quote
-    (go-complete evil-smartparens haskell-mode yasnippet yaml-mode web-mode wakatime-mode use-package smex smartparens ruby-electric ruby-block rhtml-mode recentf-ext projectile-rails prodigy popwin php-mode pallet nyan-mode multiple-cursors magit lua-mode init-loader idle-highlight-mode htmlize helm go-mode go-autocomplete fuzzy flycheck-cask expand-region exec-path-from-shell drag-stuff coffee-mode))))
+    (json-mode go-complete evil-smartparens haskell-mode yasnippet yaml-mode web-mode wakatime-mode use-package smex smartparens ruby-electric ruby-block rhtml-mode recentf-ext projectile-rails prodigy popwin php-mode pallet nyan-mode multiple-cursors magit lua-mode init-loader idle-highlight-mode htmlize helm go-mode go-autocomplete fuzzy flycheck-cask expand-region exec-path-from-shell drag-stuff coffee-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -7,3 +7,4 @@ elpa/
 elisp/
 projectile-bookmarks.eld
 .cask/
+99_local.el

@@ -138,11 +138,16 @@
 ;;--------------------------
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
-;; (require 'flycheck-pos-tip)
+(require 'flycheck-pos-tip)
 (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
-;; (eval-after-load 'flycheck
-;;   '(custom-set-variables
-;;   '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+(eval-after-load 'flycheck
+  '(custom-set-variables
+  '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+(add-to-list 'exec-path (expand-file-name "/usr/local/go/bin/"))
+;;--------------------------
+;; wakatime-mode
+;;--------------------------
+(global-wakatime-mode)
 
 (provide '05_packages)
 ;;; 05_packages.el ends here
