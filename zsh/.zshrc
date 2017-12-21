@@ -80,7 +80,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # グローバルエイリアス
 alias -g N='> /dev/null 2> /dev/null &'
 # ユーザ定義
-alias ls='ls -G'
+alias ls='ls -G --color'
 alias ks='ls'
 alias ll='ls -l'
 alias e='emacs -nw'
@@ -144,23 +144,3 @@ function get-branch-status() {
     fi
     echo ${branchstatus}' '
 }
-
-# ###############################
-# # powerline-shell
-# ###############################
-
-# powerline_shell_path=$HOME'/src/powerline-shell/powerline-shell.py'
-# if [ -f $powerline_shell_path ]; then
-#     function powerline_precmd() {
-#         PS1=$'\n'"$($powerline_shell_path --mode flat $? --shell zsh) "
-#     }
-#     function install_powerline_precmd() {
-#         for s in '${precmd_functions[@]}'; do
-#             [ '$s' = 'powerline_precmd' ] && return
-#         done
-#         precmd_functions+=(powerline_precmd)
-#     }
-#     if [ '$TERM' != 'linux' ]; then
-#         install_powerline_precmd
-#     fi
-# fi
