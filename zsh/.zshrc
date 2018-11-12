@@ -80,7 +80,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # グローバルエイリアス
 alias -g N='> /dev/null 2> /dev/null &'
 # ユーザ定義
-alias ls='ls -G --color'
+alias ls='ls -G'
 alias ks='ls'
 alias ll='ls -l'
 alias e='emacs -nw'
