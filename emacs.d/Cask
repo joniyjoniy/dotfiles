@@ -9,6 +9,7 @@
 (depends-on "init-loader")
 (depends-on "helm")
 (depends-on "projectile")
+(depends-on "helm-projectile")
 (depends-on "auto-complete")
 (depends-on "drag-stuff")
 (depends-on "exec-path-from-shell")

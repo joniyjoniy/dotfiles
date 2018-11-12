@@ -30,7 +30,7 @@
 (setq read-buffer-completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 ;; ---  wakatime-mode ---
-(global-wakatime-mode)
+;;(global-wakatime-mode)
 
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)

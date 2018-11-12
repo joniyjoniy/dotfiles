@@ -47,9 +47,11 @@
 (setq ac-use-fuzzy t)
 
 ;; --- projectile ---
-(setq projectile-completion-system 'grizzl)
 (require 'projectile)
 (projectile-mode t)
+(setq projectile-completion-system 'helm)
+(require 'helm-projectile)
+(helm-projectile-on)
 
 ;; ----
 (provide '01_corepackages)

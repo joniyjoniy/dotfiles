@@ -26,7 +26,7 @@
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(package-selected-packages
    (quote
-    (flycheck-pos-tip flycheck-popup-tip rjsx-mode terraform-mode madhat2r-theme arjen-grey-theme json-mode go-complete evil-smartparens haskell-mode yasnippet yaml-mode web-mode wakatime-mode use-package smex smartparens ruby-electric ruby-block rhtml-mode recentf-ext projectile-rails prodigy popwin php-mode pallet nyan-mode multiple-cursors magit lua-mode init-loader idle-highlight-mode htmlize helm go-mode go-autocomplete fuzzy flycheck-cask expand-region exec-path-from-shell drag-stuff coffee-mode)))
+    (auto-package-update apib-mode plantuml-mode gnuplot-mode helm-projectile geben-helm-projectile flycheck-pos-tip flycheck-popup-tip rjsx-mode terraform-mode madhat2r-theme arjen-grey-theme json-mode go-complete evil-smartparens haskell-mode yasnippet yaml-mode web-mode wakatime-mode use-package smex smartparens ruby-electric ruby-block rhtml-mode recentf-ext projectile-rails prodigy popwin php-mode pallet nyan-mode multiple-cursors magit lua-mode init-loader idle-highlight-mode htmlize helm go-mode go-autocomplete fuzzy flycheck-cask expand-region exec-path-from-shell drag-stuff coffee-mode)))
  '(terraform-indent-level 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
