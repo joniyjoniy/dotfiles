@@ -80,10 +80,10 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # グローバルエイリアス
 alias -g N='> /dev/null 2> /dev/null &'
 # ユーザ定義
-alias ls='ls -G'
+alias ls='ls -G --color'
 alias ks='ls'
 alias ll='ls -l'
-alias emacs='emacs -nw'
+alias e='emacs -nw'
 alias zshload='source ~/.zshrc'
 alias tmux='tmux -2'
 alias tmuxa='tmux a -t'
@@ -145,28 +145,7 @@ function get-branch-status() {
     echo ${branchstatus}' '
 }
 
-# ###############################
-# # powerline-shell
-# ###############################
-
-# powerline_shell_path=$HOME'/src/powerline-shell/powerline-shell.py'
-# if [ -f $powerline_shell_path ]; then
-#     function powerline_precmd() {
-#         PS1=$'\n'"$($powerline_shell_path --mode flat $? --shell zsh) "
-#     }
-#     function install_powerline_precmd() {
-#         for s in '${precmd_functions[@]}'; do
-#             [ '$s' = 'powerline_precmd' ] && return
-#         done
-#         precmd_functions+=(powerline_precmd)
-#     }
-#     if [ '$TERM' != 'linux' ]; then
-#         install_powerline_precmd
-#     fi
-# fi
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/joniyjoniy/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/joniyjoniy/gcloud/google-cloud-sdk/path.zsh.inc'; fi
-
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/joniyjoniy/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/joniyjoniy/gcloud/google-cloud-sdk/completion.zsh.inc'; fi

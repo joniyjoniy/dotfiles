@@ -2,7 +2,6 @@
 (setq echo-keystrokes 0.1)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
-(display-time-mode 1)
 (load-theme 'madhat2r t)
 (show-paren-mode t)
 (setq show-paren-delay 0)
