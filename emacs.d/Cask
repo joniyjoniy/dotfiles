@@ -1,9 +1,10 @@
 (source gnu)
 (source melpa)
 
+(depends-on "cask")
 (depends-on "pallet")
 (depends-on "bind-key")
-(depends-on "cask")
+
 (depends-on "dash")
 (depends-on "use-package")
 (depends-on "init-loader")

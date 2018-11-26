@@ -40,7 +40,7 @@
     (interactive)
     (insert "end")
     (end-of-line))
-  (require 'ruby-block)
+  ;; (require 'ruby-block)
   (setq ruby-block-heilight-toggle t))
 
 ;; --- rails ---

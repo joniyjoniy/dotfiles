@@ -7,9 +7,9 @@
 (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (add-to-list 'exec-path (expand-file-name "/usr/local/go/bin/"))
-(with-eval-after-load 'flycheck
-  (add-hook 'flycheck-mode-hook #'flycheck-cask-setup)
-  (flycheck-pos-tip-mode))
+;; (with-eval-after-load 'flycheck
+;;   (add-hook 'flycheck-mode-hook #'flycheck-cask-setup)
+;;   (flycheck-pos-tip-mode))
 
 ;; --- smartparens ---
 (require 'smartparens-config)
